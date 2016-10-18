@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.8.0
+FROM mhart/alpine-node:6.8.1
 
 MAINTAINER Jean-Luc Geering <jeanluc.geering@ufirstgroup.com>
 
