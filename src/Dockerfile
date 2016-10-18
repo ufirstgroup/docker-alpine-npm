@@ -2,10 +2,12 @@ FROM mhart/alpine-node:6.8.0
 
 MAINTAINER Jean-Luc Geering <jeanluc.geering@ufirstgroup.com>
 
-# install su-exec
+# install bash, su-exec and tini
 
 RUN apk update && apk upgrade && apk add \
-  su-exec=0.2-r0
+  bash=4.3.42-r3 \
+  su-exec=0.2-r0 \
+  tini=0.9.0-r1
 
 USER root
 
@@ -18,5 +20,5 @@ VOLUME ["/workdir", "/homedir"]
 
 COPY entrypoint.sh /
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/entrypoint.sh"]
 CMD ["npm"]
