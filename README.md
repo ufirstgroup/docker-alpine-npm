@@ -6,5 +6,5 @@ docker run -it --rm \
   -e GROUP_ID=`id -g` \
   -v $HOME:/homedir \
   -v `pwd -P`:/workdir  \
-  ufirstgroup/alpine-npm:6.8.1_3.10.8 npm
+  ufirstgroup/alpine-npm:6.9.2_3.10.10 npm
 ```
